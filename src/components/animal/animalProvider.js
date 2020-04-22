@@ -38,7 +38,7 @@ export const AnimalProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
+        console.log("****  ANIMAL APPLICATION STATE CHANGED  ****")
     }, [animals])
 
     return (
