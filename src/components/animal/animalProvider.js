@@ -18,7 +18,7 @@ export const AnimalProvider = (props) => {
             .then(setAnimals)
     }
 
-    const addAnimals = animal => {
+    const addAnimal = animal => {
         return fetch("http://localhost:8088/animals", {
             method: "POST",
             headers: {
@@ -43,7 +43,7 @@ export const AnimalProvider = (props) => {
 
     return (
         <AnimalContext.Provider value={{
-            animals, addAnimals
+            animals, addAnimal
         }}>
             {props.children}
         </AnimalContext.Provider>

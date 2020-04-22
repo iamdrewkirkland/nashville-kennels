@@ -26,7 +26,6 @@ export default () => (
     <LocationProvider>
       <LocationList />
     </LocationProvider>
-    <h2>Animals</h2>
     <AnimalProvider>
       <LocationProvider>
         <CustomerProvider>
