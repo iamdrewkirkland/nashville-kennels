@@ -1,4 +1,5 @@
 import React from "react";
+import "./Kennel.css";
 import "./employees/Employees.css";
 import "./locations/Locations.css";
 import { LocationProvider } from "./locations/LocationProvider";

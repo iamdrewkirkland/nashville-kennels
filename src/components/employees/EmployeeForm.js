@@ -1,11 +1,11 @@
 import React, { useContext, useRef } from "react";
 import { EmployeeContext } from "./employeeProvider";
-import { LocationProvider } from "../locations/LocationProvider";
+import { LocationContext } from "../locations/LocationProvider";
 import "./Employees.css";
 
 export default (props) => {
   const { addEmployee } = useContext(EmployeeContext);
-  const { locations } = useContext(LocationProvider);
+  const { locations } = useContext(LocationContext);
   const name = useRef();
   const location = useRef();
   const address = useRef();
