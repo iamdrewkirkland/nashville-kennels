@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Kennel.css";
+import "./Layout.css";
 import "./employees/Employees.css";
 import "./locations/Locations.css";
 import { LocationProvider } from "./locations/LocationProvider";
@@ -12,28 +13,34 @@ import { CustomerProvider } from "./customers/customerProvider";
 import CustomerList from "./customers/CustomerList";
 import { EmployeeProvider } from "./employees/employeeProvider";
 import EmployeeList from "./employees/EmployeeList";
+import { SearchBar } from "./search/SearchBar";
+import { SearchResults } from "./search/SearchResults";
 
-export default () => (
-  <>
-    <h2>Nashville Kennels</h2>
-    <small>Loving care when you're not there.</small>
+export const Dashboard = () => {
+  const [searchTerms, setTerms] = useState("");
 
-    <address>
-      <div>Visit Us at the Nashville North Location</div>
-      <div>500 Puppy Way</div>
-    </address>
-
-    <AnimalProvider>
-      <CustomerProvider>
-        <EmployeeProvider>
-          <LocationProvider>
-            <LocationList />
-            <AnimalList />
-            <CustomerList />
-            <EmployeeList />
-          </LocationProvider>
-        </EmployeeProvider>
-      </CustomerProvider>
-    </AnimalProvider>
-  </>
-);
+  return (
+    <div className="mainContainer">
+      <AnimalProvider>
+        <CustomerProvider>
+          <EmployeeProvider>
+            <LocationProvider>
+              <div className="searchContainer">
+                <SearchBar setTerms={setTerms} />
+                <SearchResults searchTerms={searchTerms} />
+              </div>
+              <div className="dataContainer">
+                <h2>Nashville Kennels</h2>
+                <small>Loving care when you're not there.</small>
+                <LocationList />
+                <AnimalList />
+                <CustomerList />
+                <EmployeeList />
+              </div>
+            </LocationProvider>
+          </EmployeeProvider>
+        </CustomerProvider>
+      </AnimalProvider>
+    </div>
+  );
+};

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react"
-import { AnimalContext } from "../animal/AnimalProvider"
+import { AnimalContext } from "../animal/animalProvider"
 
 export const SearchResults = ({ searchTerms }) => {
     const { animals } = useContext(AnimalContext)
