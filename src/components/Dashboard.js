@@ -22,25 +22,18 @@ export default () => (
       <div>Visit Us at the Nashville North Location</div>
       <div>500 Puppy Way</div>
     </address>
-    <h2>Locations</h2>
-    <LocationProvider>
-      <LocationList />
-    </LocationProvider>
+
     <AnimalProvider>
-      <LocationProvider>
-        <CustomerProvider>
-          <AnimalList />
-        </CustomerProvider>
-      </LocationProvider>
+      <CustomerProvider>
+        <EmployeeProvider>
+          <LocationProvider>
+            <LocationList />
+            <AnimalList />
+            <CustomerList />
+            <EmployeeList />
+          </LocationProvider>
+        </EmployeeProvider>
+      </CustomerProvider>
     </AnimalProvider>
-    <h2>Customers</h2>
-    <CustomerProvider>
-      <CustomerList />
-    </CustomerProvider>
-    <EmployeeProvider>
-      <LocationProvider>
-        <EmployeeList />
-      </LocationProvider>
-    </EmployeeProvider>
   </>
 );
