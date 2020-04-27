@@ -20,6 +20,9 @@ export const Dashboard = () => {
   const [searchTerms, setTerms] = useState("");
 
   return (
+    <>
+    <h2>Nashville Kennels</h2>
+                <small>Loving care when you're not there.</small>
     <div className="mainContainer">
       <AnimalProvider>
         <CustomerProvider>
@@ -30,8 +33,7 @@ export const Dashboard = () => {
                 <SearchResults searchTerms={searchTerms} />
               </div>
               <div className="dataContainer">
-                <h2>Nashville Kennels</h2>
-                <small>Loving care when you're not there.</small>
+                
                 <LocationList />
                 <AnimalList />
                 <CustomerList />
@@ -42,5 +44,6 @@ export const Dashboard = () => {
         </CustomerProvider>
       </AnimalProvider>
     </div>
+    </>
   );
 };
